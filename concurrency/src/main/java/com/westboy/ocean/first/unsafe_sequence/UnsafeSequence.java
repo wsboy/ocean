@@ -1,4 +1,4 @@
-package com.wesboy.ocean.first.unsafe_sequence;
+package com.westboy.ocean.first.unsafe_sequence;
 
 /**
  * @author: wangpengbo
