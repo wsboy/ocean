@@ -7,31 +7,30 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>quartz</artifactId>
+    <artifactId>java-knowledge</artifactId>
     <packaging>jar</packaging>
 
-    <name>quartz</name>
+    <name>java-knowledge</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <quartz.version>2.3.0</quartz.version>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>com.wesboy.ocean</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
-            <version>${quartz.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 </project>

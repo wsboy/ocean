@@ -1,4 +1,4 @@
-package com.wesboy.ocean;
+package com.wesboy.ocean.session;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

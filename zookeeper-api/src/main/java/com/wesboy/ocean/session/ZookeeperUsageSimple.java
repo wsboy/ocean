@@ -1,4 +1,4 @@
-package com.wesboy.ocean;
+package com.wesboy.ocean.session;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -39,6 +39,7 @@ public class ZookeeperUsageSimple implements Watcher {
     @Override
     public void process(WatchedEvent watchedEvent) {
         System.out.println("Receive watched event: " + watchedEvent);
+        //判断是否已经连接
         if (Event.KeeperState.SyncConnected == watchedEvent.getState()) {
             connectedSemaphore.countDown();
         }

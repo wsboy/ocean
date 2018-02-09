@@ -10,7 +10,8 @@
         <module>elastic-job</module>
         <module>common-util</module>
         <module>zookeeper-api</module>
-        <module>quartz</module>
+        <module>design-patterns</module>
+        <module>java-knowledge</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -22,6 +23,9 @@
         <spring-core.version>4.3.12.RELEASE</spring-core.version>
         <spring-context.version>4.3.12.RELEASE</spring-context.version>
         <lombok.version>1.16.18</lombok.version>
+        <quartz.version>2.3.0</quartz.version>
+        <slf4-log4j12.vesrion>1.7.5</slf4-log4j12.vesrion>
+        <slf4-api.version>1.7.5</slf4-api.version>
     </properties>
 
     <dependencyManagement>
@@ -50,6 +54,24 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+
+             <!--日志相关 -->
+            <!--<dependency>-->
+                <!--<groupId>org.slf4j</groupId>-->
+                <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--<version>${slf4-log4j12.vesrion}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.slf4j</groupId>-->
+                <!--<artifactId>slf4j-api</artifactId>-->
+                <!--<version>${slf4-api.version}</version>-->
+            <!--</dependency>-->
 
         </dependencies>
     </dependencyManagement>

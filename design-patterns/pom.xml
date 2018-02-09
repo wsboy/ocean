@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zookeeper-api</artifactId>
+    <artifactId>design-patterns</artifactId>
     <packaging>jar</packaging>
 
-    <name>zookeeper-api</name>
+    <name>design-patterns</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -22,15 +22,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 </project>

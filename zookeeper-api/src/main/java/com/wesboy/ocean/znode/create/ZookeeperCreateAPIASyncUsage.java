@@ -1,4 +1,4 @@
-package com.wesboy.ocean;
+package com.wesboy.ocean.znode.create;
 
 import org.apache.zookeeper.*;
 
@@ -13,25 +13,13 @@ public class ZookeeperCreateAPIASyncUsage implements Watcher {
     private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        ZooKeeper zooKeeper = new ZooKeeper(
-                "52.80.146.240:2181",
-                5000,
-                new ZookeeperCreateAPIASyncUsage());
-
+        ZooKeeper zooKeeper = new ZooKeeper("52.80.146.240:2181", 5000, new ZookeeperCreateAPIASyncUsage());
         connectedSemaphore.await();
-
-        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE,
-                CreateMode.EPHEMERAL, new IStringCallback(), "I am context");
-
+        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, new IStringCallback(), "I am context");
         //再次创建已经存在的节点
-        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE,
-                CreateMode.EPHEMERAL, new IStringCallback(), "I am context");
-
-        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE,
-                CreateMode.EPHEMERAL_SEQUENTIAL, new IStringCallback(), "I am context");
-
+        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, new IStringCallback(), "I am context");
+        zooKeeper.create("/zk-test-ephemeral-", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL, new IStringCallback(), "I am context");
         Thread.sleep(Integer.MAX_VALUE);
-
     }
 
     @Override
@@ -47,6 +35,7 @@ class IStringCallback implements AsyncCallback.StringCallback{
 
     @Override
     public void processResult(int rc, String path, Object ctx, String name) {
+        //异步回调
         System.out.println("Create path result: [" + rc + ", " + path + ", " + ctx + ", real path name: " + name);
     }
 }
