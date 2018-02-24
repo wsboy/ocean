@@ -40,9 +40,6 @@ public class ScheduledExecutorTest implements Runnable {
         long initialDelay2 = 2;
         long delay2 = 2;
         //从现在开始2秒钟之后，每隔2秒钟执行一次job2
-        /**
-         *
-         */
         service.scheduleWithFixedDelay(new ScheduledExecutorTest("job2"), initialDelay2, delay2, TimeUnit.SECONDS);
     }
 }
