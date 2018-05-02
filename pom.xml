@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wesboy.ocean</groupId>
+    <groupId>com.westboy.ocean</groupId>
     <artifactId>ocean</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -10,8 +10,11 @@
         <module>elastic-job</module>
         <module>common-util</module>
         <module>zookeeper-api</module>
-        <module>design-patterns</module>
         <module>java-knowledge</module>
+        <module>nio</module>
+        <module>kafka</module>
+        <module>spring-learning</module>
+        <module>design-pattern</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -20,12 +23,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-core.version>4.3.12.RELEASE</spring-core.version>
-        <spring-context.version>4.3.12.RELEASE</spring-context.version>
+        <spring.version>4.3.15.RELEASE</spring.version>
         <lombok.version>1.16.18</lombok.version>
         <quartz.version>2.3.0</quartz.version>
         <slf4-log4j12.vesrion>1.7.5</slf4-log4j12.vesrion>
         <slf4-api.version>1.7.5</slf4-api.version>
+        <kafka.version>1.0.1</kafka.version>
+        <mysql-connection.version>5.1.35</mysql-connection.version>
     </properties>
 
     <dependencyManagement>
@@ -40,13 +44,17 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
-                <version>${spring-core.version}</version>
+                <version>${spring.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>${spring-context.version}</version>
+                <version>${spring.version}</version>
             </dependency>
 
             <dependency>
@@ -59,6 +67,18 @@
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
                 <version>${quartz.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.12</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connection.version}</version>
             </dependency>
 
              <!--日志相关 -->
